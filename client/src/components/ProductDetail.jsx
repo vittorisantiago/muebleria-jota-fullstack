@@ -1,9 +1,11 @@
+import styles from "./ProductDetail.module.css";
+
 function ProductDetail({ product, onAddToCart, onBack }) {
   return (
-    <section className="detail">
-      <button onClick={onBack}>← Volver</button>
-      <div className="detail-content">
+    <section className={styles.detailWrapper}>
+      <div className={styles.imgBox}>
         <img
+          className={styles.img}
           src={product.imagen}
           alt={product.nombre}
           onError={(e) => {
@@ -11,19 +13,28 @@ function ProductDetail({ product, onAddToCart, onBack }) {
               "https://via.placeholder.com/600x400?text=Mueble";
           }}
         />
-        <div>
-          <h2>{product.nombre}</h2>
-          {product.descripcion && <p>{product.descripcion}</p>}
-          <p>
-            <strong>Precio: </strong>${product.precio.toLocaleString("es-AR")}
+      </div>
+      <div className={styles.info}>
+        <h2 className={styles.name}>{product.nombre}</h2>
+        {product.descripcion && (
+          <p className={styles.desc}>{product.descripcion}</p>
+        )}
+        <p className={styles.price}>
+          ${product.precio.toLocaleString("es-AR")}
+        </p>
+        {product.medidas && (
+          <p className={styles.desc}>
+            <strong>Medidas: </strong>
+            {product.medidas}
           </p>
-          {product.medidas && (
-            <p>
-              <strong>Medidas: </strong>
-              {product.medidas}
-            </p>
-          )}
-          <button onClick={onAddToCart}>Añadir al Carrito</button>
+        )}
+        <div className={styles.btnRow}>
+          <button className={styles.backBtn} onClick={onBack}>
+            ← Volver
+          </button>
+          <button className={styles.addBtn} onClick={onAddToCart}>
+            Añadir al Carrito
+          </button>
         </div>
       </div>
     </section>

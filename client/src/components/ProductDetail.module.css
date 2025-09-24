@@ -1,0 +1,154 @@
+/* ProductDetail.module.css
+   Estilos para la vista de detalle de producto.
+   Mobile first, simple, moderno y con comentarios.
+*/
+
+:root {
+  --pd-radius: 16px;
+  --pd-shadow: 0 4px 24px rgba(160, 82, 45, 0.1);
+}
+
+.detailWrapper {
+  background: #fff;
+  border-radius: var(--pd-radius);
+  box-shadow: var(--pd-shadow);
+  max-width: 700px;
+  margin: 2.5rem auto 2rem auto;
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.imgBox {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 4/3;
+  background: var(--hj-alabastro);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(160, 82, 45, 0.08);
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.name {
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--hj-siena);
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+.price {
+  color: var(--hj-salvia);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.desc {
+  color: #333;
+  font-size: 1.08rem;
+  text-align: center;
+  margin-bottom: 0.7rem;
+}
+
+.btnRow {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.addBtn {
+  background: var(--hj-siena);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(160, 82, 45, 0.1);
+  transition: background 0.2s, transform 0.13s, filter 0.2s;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+.addBtn:hover {
+  background: var(--hj-salvia);
+  filter: brightness(1.08);
+  transform: scale(1.04);
+}
+.addBtn:active {
+  transform: scale(0.97);
+  filter: brightness(0.97);
+}
+
+.backBtn {
+  background: transparent;
+  color: var(--hj-siena);
+  border: 1.5px solid var(--hj-siena);
+  border-radius: 999px;
+  padding: 0.8rem 1.7rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.13s;
+  outline: none;
+}
+.backBtn:hover {
+  background: var(--hj-alabastro);
+  color: var(--hj-salvia);
+  border-color: var(--hj-salvia);
+  transform: scale(1.04);
+}
+.backBtn:active {
+  transform: scale(0.97);
+  color: var(--hj-siena);
+  border-color: var(--hj-siena);
+}
+
+@media (min-width: 700px) {
+  .detailWrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+    max-width: 950px;
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+  }
+  .imgBox {
+    max-width: 420px;
+    min-width: 320px;
+  }
+  .info {
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+  }
+  .name {
+    font-size: 2.3rem;
+    text-align: left;
+  }
+  .desc {
+    text-align: left;
+  }
+  .btnRow {
+    justify-content: flex-start;
+  }
+}
