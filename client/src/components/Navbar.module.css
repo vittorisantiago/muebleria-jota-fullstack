@@ -1,0 +1,175 @@
+/* ====== NAVBAR (mobile-first, CSS Module) ====== */
+/* Usa variables y fuentes globales ya definidas en App.css */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #fff;
+  border-bottom: 1px solid var(--hj-border);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  height: 64px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Marca */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  user-select: none;
+}
+.brandLogo {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+.brandName {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--hj-ink);
+}
+
+/* Menú desktop (oculto en mobile) */
+.menuDesktop {
+  display: none;
+  gap: 1.25rem;
+}
+
+/* Enlaces */
+.navLink {
+  position: relative;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  color: var(--hj-ink);
+  font-weight: 500;
+}
+.navLink:hover {
+  background: #f7f7f7;
+}
+.isActive {
+  color: var(--hj-siena);
+}
+.activeDot {
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--hj-siena);
+}
+
+/* Carrito */
+.cart {
+  position: relative;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--hj-border);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+}
+.cart:hover {
+  background: #f7f7f7;
+}
+.cartLabel {
+  font-weight: 500;
+  color: var(--hj-ink);
+}
+.cartBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--hj-siena);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Hamburguesa (solo mobile) */
+.hamburger {
+  width: 40px;
+  height: 36px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid var(--hj-border);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+.hamburger span {
+  height: 2px;
+  width: 18px;
+  background: var(--hj-ink);
+  margin: 0 auto;
+}
+
+/* Menú móvil */
+.menuMobile {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 0.25rem;
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem 0.75rem;
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+.open {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .menuDesktop {
+    display: inline-flex;
+    justify-self: center;
+  }
+  .hamburger,
+  .menuMobile {
+    display: none;
+  }
+  .brand {
+    justify-self: start;
+  }
+  .brandLogo {
+    height: 32px;
+  }
+  .cart {
+    justify-self: end;
+  }
+}
