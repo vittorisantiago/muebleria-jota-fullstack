@@ -1,12 +1,15 @@
+// src/App.jsx
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProductList from "./components/ProductList";
 import ProductDetail from "./components/ProductDetail";
 import ContactForm from "./components/ContactForm";
+import Home from "./components/Home";
 
 function App() {
-  const [view, setView] = useState("catalog"); // 'catalog' | 'detail' | 'contact'
+  // 'home' | 'catalog' | 'detail' | 'contact' | (opcional 'cart' a futuro)
+  const [view, setView] = useState("home");
   const [products, setProducts] = useState([]);
   const [selected, setSelected] = useState(null);
   const [cart, setCart] = useState([]);
@@ -48,9 +51,18 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar cartCount={cart.length} onNavigate={setView} />
+      {/* Pasamos currentView y cartCount para activo + badge + hamburguesa */}
+      <Navbar currentView={view} cartCount={cart.length} onNavigate={setView} />
 
       <main className="container">
+        {view === "home" && (
+          <Home
+            products={products}
+            onSelect={handleSelect}
+            onNavigate={setView}
+          />
+        )}
+
         {view === "catalog" && (
           <>
             {loading && <p>Cargando productos...</p>}

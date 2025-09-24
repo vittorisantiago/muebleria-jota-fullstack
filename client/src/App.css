@@ -1,60 +1,63 @@
-/* Layout */
+/* ====== GLOBAL (App.css) ====== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap");
+
+/* Variables globales: paleta, medidas, layout */
+:root {
+  /* Paleta de marca */
+  --hj-siena: #a0522d;
+  --hj-alabastro: #f5e6d3;
+  --hj-salvia: #87a96b;
+  --hj-ink: #111;
+  --hj-muted: #6b6b6b;
+  --hj-border: #eaeaea;
+
+  /* Medidas */
+  --container-max: 1100px;
+
+  /* Alturas de layout (ajustá si tu navbar/footer tienen otro alto) */
+  --navbar-height: 64px;
+  --footer-height: 120px;
+}
+
+/* ====== Base ====== */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  color: var(--hj-ink);
+  background: var(--hj-alabastro);
+}
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+/* ====== Contenedor de página ====== */
 .container {
-  max-width: 1100px;
+  max-width: var(--container-max);
   margin: 0 auto;
   padding: 1rem;
 }
-.navbar,
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background: #f7f7f7;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
-}
 
-/* Cards */
-.card {
-  border: 1px solid #eee;
-  border-radius: 8px;
+/* ====== Utilidades ====== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  background: #fff;
-}
-.card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-.card-body {
-  padding: 0.75rem 1rem;
-}
-
-/* Detail */
-.detail .detail-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  align-items: start;
-}
-.detail img {
-  width: 100%;
-  border: 1px solid #eee;
-  border-radius: 8px;
-}
-
-/* Contact */
-.contact form {
-  display: grid;
-  gap: 0.75rem;
-  max-width: 480px;
-}
-.contact input,
-.contact textarea {
-  width: 100%;
-  padding: 0.5rem;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
