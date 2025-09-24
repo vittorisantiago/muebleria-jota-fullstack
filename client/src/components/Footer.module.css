@@ -1,0 +1,65 @@
+/* ===== Footer.module.css ===== */
+
+/* Estilo base del footer */
+.footer {
+  background: var(--hj-salvia);
+  border-top: 1px solid var(--hj-border);
+  color: var(--hj-ink);
+  font-size: 0.9rem;
+  padding: 2rem 1rem 1rem;
+}
+
+/* Contenedor interno: dos columnas (marca y contacto) */
+.inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap; /* permite que en mobile se apilen */
+  margin-bottom: 1.5rem;
+}
+
+/* Columna de la marca */
+.brand {
+  min-width: 220px;
+  text-align: center;
+}
+.logo img {
+  max-height: 40px;
+}
+.tagline {
+  margin-top: 0.5rem;
+  color: var(--hj-muted);
+  font-style: italic;
+}
+
+/* Columna de contacto */
+.contact {
+  min-width: 220px;
+  text-align: center;
+}
+.title {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--hj-ink);
+}
+.text {
+  margin: 0.25rem 0;
+}
+.link {
+  color: var(--hj-siena);
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Barra inferior */
+.bottom {
+  text-align: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--hj-salvia);
+  font-size: 0.8rem;
+  color: var(--hj-muted);
+}
