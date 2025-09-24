@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./ContactForm.module.css";
 
 function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -17,16 +18,23 @@ function ContactForm() {
   };
 
   return (
-    <section className="contact">
-      <h2>Contacto</h2>
-      <form onSubmit={onSubmit}>
-        <label>
+    <section className={styles.contactSection}>
+      <h2 className={styles.title}>Contacto</h2>
+      <form className={styles.form} onSubmit={onSubmit}>
+        <label className={styles.label}>
           Nombre
-          <input name="name" value={form.name} onChange={onChange} required />
+          <input
+            className={styles.input}
+            name="name"
+            value={form.name}
+            onChange={onChange}
+            required
+          />
         </label>
-        <label>
+        <label className={styles.label}>
           Email
           <input
+            className={styles.input}
             type="email"
             name="email"
             value={form.email}
@@ -34,18 +42,21 @@ function ContactForm() {
             required
           />
         </label>
-        <label>
+        <label className={styles.label}>
           Mensaje
           <textarea
+            className={styles.textarea}
             name="message"
             value={form.message}
             onChange={onChange}
             required
           />
         </label>
-        <button type="submit">Enviar</button>
+        <button className={styles.button} type="submit">
+          Enviar
+        </button>
       </form>
-      {ok && <p style={{ color: "green" }}>¡Mensaje enviado con éxito!</p>}
+      {ok && <p className={styles.successMsg}>¡Mensaje enviado con éxito!</p>}
     </section>
   );
 }

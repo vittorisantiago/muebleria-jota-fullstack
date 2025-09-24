@@ -1,0 +1,103 @@
+/* ContactForm.module.css
+   Estilos para el formulario de contacto, siguiendo la paleta y estilo del sitio.
+   Mobile first, simple y con comentarios.
+*/
+
+:root {
+  --contact-radius: 12px;
+  --contact-shadow: 0 4px 24px rgba(160, 82, 45, 0.08);
+}
+
+.contactSection {
+  background: #fff;
+  border-radius: var(--contact-radius);
+  box-shadow: var(--contact-shadow);
+  max-width: 420px;
+  margin: 2.5rem auto 2rem auto;
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--hj-siena);
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.label {
+  font-weight: 500;
+  color: var(--hj-siena);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1rem;
+}
+
+.input,
+.textarea {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--hj-border);
+  background: var(--hj-alabastro);
+  font-size: 1rem;
+  color: var(--hj-ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.input:focus,
+.textarea:focus {
+  border-color: var(--hj-siena);
+  box-shadow: 0 2px 8px rgba(160, 82, 45, 0.13);
+}
+
+.textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.button {
+  margin-top: 0.5rem;
+  background: var(--hj-siena);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.08rem;
+  cursor: pointer;
+  transition: background 0.2s, filter 0.2s;
+  box-shadow: 0 2px 8px rgba(160, 82, 45, 0.1);
+  align-self: center;
+}
+.button:hover {
+  background: var(--hj-salvia);
+  filter: brightness(1.08);
+}
+
+.successMsg {
+  color: var(--hj-salvia);
+  font-weight: 600;
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .contactSection {
+    max-width: 520px;
+    padding: 2.5rem 2rem 2rem 2rem;
+  }
+  .title {
+    font-size: 1.7rem;
+  }
+}
