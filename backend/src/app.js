@@ -4,6 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import productsRouter from "./routes/products.routes.js";
+import cartRouter from "./routes/cart.routes.js";
 import { logger } from "./middlewares/logger.js";
 import { notFound, errorHandler } from "./middlewares/errorHandlers.js";
 
@@ -26,6 +27,7 @@ app.use(
 
 // Rutas API
 app.use("/api/productos", productsRouter);
+app.use("/api/cart", cartRouter);
 
 // 404 y error handler
 app.use(notFound);
